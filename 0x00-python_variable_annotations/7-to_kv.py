@@ -1,5 +1,5 @@
-#!?usr/bin/env python3
-'''type-annotated module for to_kv function'''
+#!/usr/bin/env python3
+'''type-annotated module '''
 from typing import Union, Tuple
 
 
