@@ -8,11 +8,17 @@ from parameterized import parameterized
 
 class TestAccessNestedMap(unittest.TestCase):
     '''Test class for access_nested_map in utils.py'''
-    @parameterized.expand([({"a": 1}, ("a",), 1),
+    @parameterized.expand([
+        ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
-        ({"a": {"b": 2}}, ("a", "b"), 2),])
-    def test_access_nested_map(self, path: Tuple[str], 
-            nested_map: Dict, expected: Union[Dict, int]) -> None:
+        ({"a": {"b": 2}}, ("a", "b"), 2),
+    ])
+    def test_access_nested_map(
+            self,
+            path: Tuple[str],
+            nested_map: Dict,
+            expected: Union[Dict, int],
+            ) -> None:
         '''test output method'''
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
